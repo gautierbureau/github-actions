@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build_type: [Debug, Release]
+        cxx11: [YES, NO]
+        library_type: [SHARED, STATIC]
+        compiler: [GCC, CLANG]
+
+    steps:
+      - name: Run
+        run: |
+          echo $BUILD_TYPE
+          echo $CXX11_ENABLED
+          echo $COMPILER
+          echo $DYNAWO_LIBRARY_TYPE
+        env:
+          BUILD_TYPE: ${{ matrix.build_type }}
+          CXX11_ENABLED: ${{ matrix.cxx11 }}
+          COMPILER: ${{ matrix.library_type }}
+          DYNAWO_LIBRARY_TYPE: ${{ matrix.compiler }}
