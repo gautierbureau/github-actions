@@ -14,6 +14,7 @@ jobs:
         run: |
           printenv
           cp /usr/local/opt/gcc/lib/gcc/9/libgfortran.5.dylib .
+          ls
 
 # jobs:
 #   build:
