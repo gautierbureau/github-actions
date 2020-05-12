@@ -15,9 +15,8 @@ jobs:
           printenv
           export PATH=/usr/bin:/bin:/usr/sbin:/sbin
           cp /usr/local/opt/gcc/lib/gcc/9/libgfortran.5.dylib .
-          ls
-          clang --version
-          gfortran -v
+          find / -name "libzstd.*"
+
 
 # jobs:
 #   build:
