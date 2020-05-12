@@ -13,8 +13,11 @@ jobs:
       - name: Install
         run: |
           printenv
+          export PATH=/usr/bin:/bin:/usr/sbin:/sbin
           cp /usr/local/opt/gcc/lib/gcc/9/libgfortran.5.dylib .
           ls
+          clang --version
+          gfortran -v
 
 # jobs:
 #   build:
